@@ -1,0 +1,25 @@
+.text-editor-header {
+    background-color: rgb(146, 184, 255);
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+.content {
+    height: 400px;
+    outline: none;
+}
+
+.card {
+    box-shadow: 0px 2px 5px 1px rgba(107, 107, 107, 0.75);
+}
+
+.content img {
+    height: 100px;
+    width: 100px;
+    margin: 2px;
+}
+body{
+    background-image: url('https://images.ctfassets.net/s600jj41gsex/2kFLBHtKWMdB53O7nl31D4/db0877fb84cc94931740bc6709242421/img-tinymce-js-rte-alt-1.png?w=768&q=50&fit=scale');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
