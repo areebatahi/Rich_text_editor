@@ -1,25 +1,108 @@
-.text-editor-header {
-    background-color: rgb(146, 184, 255);
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
 }
 
-.content {
-    height: 400px;
-    outline: none;
+body {
+  min-height: 100vh;
+  background: linear-gradient(120deg, #1a1a2e, #16213e, #0f3460);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+  overflow: hidden;
 }
 
+/* Animated Background */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Card Container */
 .card {
-    box-shadow: 0px 2px 5px 1px rgba(107, 107, 107, 0.75);
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 40px rgba(0, 255, 255, 0.15);
+  width: 100%;
+  max-width: 850px;
+  overflow: hidden;
+  transition: all 0.4s ease;
 }
 
-.content img {
-    height: 100px;
-    width: 100px;
-    margin: 2px;
+/* Header Toolbar */
+.text-editor-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
-body{
-    background-image: url('https://images.ctfassets.net/s600jj41gsex/2kFLBHtKWMdB53O7nl31D4/db0877fb84cc94931740bc6709242421/img-tinymce-js-rte-alt-1.png?w=768&q=50&fit=scale');
-    background-repeat: no-repeat;
-    background-size: cover;
+
+.text-editor-header .btn {
+  margin: 6px;
+  color: #00fff0;
+  background: linear-gradient(145deg, #1a1a2e, #222);
+  border-radius: 12px;
+  border: none;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  padding: 10px 12px;
+  box-shadow: 0 4px 12px rgba(0, 255, 255, 0.15);
+}
+
+.text-editor-header .btn:hover {
+  transform: scale(1.15);
+  background: #00fff04d;
+  color: #fff;
+  box-shadow: 0 0 15px #00fff0aa;
+}
+
+/* Content Area */
+#content {
+  min-height: 300px;
+  padding: 25px;
+  font-size: 1.1rem;
+  background: transparent;
+  outline: none;
+  color: #ffffff;
+  border-radius: 0 0 20px 20px;
+  border: 2px solid transparent;
+  border-top: none;
+  box-shadow: inset 0 0 12px #00fff05a;
+}
+
+/* Scrollbar Customization */
+#content::-webkit-scrollbar {
+  width: 8px;
+}
+#content::-webkit-scrollbar-thumb {
+  background: #00fff0;
+  border-radius: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .text-editor-header {
+    justify-content: flex-start;
+  }
+
+  .text-editor-header .btn {
+    font-size: 15px;
+    padding: 8px;
+  }
+
+  #content {
+    font-size: 1rem;
+    padding: 20px;
+  }
 }
